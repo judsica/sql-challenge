@@ -55,3 +55,39 @@ REFERENCES "salaries" ("emp_no");
 ALTER TABLE "titles" ADD CONSTRAINT "fk_titles_title_id" FOREIGN KEY("title_id")
 REFERENCES "employees" ("emp_title_id");
 
+SELECT * FROM Public."dept_emp";
+SELECT * FROM Public."employees";
+SELECT * FROM Public."departments";
+SELECT * FROM Public."titles";
+SELECT * FROM Public."salaries";
+
+COPY Public."dept_emp"("emp_no", dept_no)
+FROM 'C:\Users\judy6\Downloads\challenge9\Starter_Code\data\dept_emp.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY Public."employees"("emp_no", emp_title_id, birth_date, first_name, last_name, sex, hire_date)
+FROM 'C:\Users\judy6\Downloads\challenge9\Starter_Code\data\employees.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY Public."departments"("dept_no", dept_name)
+FROM 'C:\Users\judy6\Downloads\challenge9\Starter_Code\data\departments.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY Public."titles"("title_id", title)
+FROM 'C:\Users\judy6\Downloads\challenge9\Starter_Code\data\titles.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY Public."salaries"("emp_no", salary)
+FROM 'C:\Users\judy6\Downloads\challenge9\Starter_Code\data\salaries.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT * FROM Public."dept_emp";
+SELECT * FROM Public."employees";
+SELECT * FROM Public."departments";
+SELECT * FROM Public."titles";
+SELECT * FROM Public."salaries";
